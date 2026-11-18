@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStream - Developer Learning Hub</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f3ff;
+            color: #312e81;
+        }
+
+        /* FLEXBOX HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2e1065;
+            padding: 15px 25px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-box {
+            background-color: #5b21b6;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .nav-box nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-box nav ul li {
+            position: relative;
+        }
+
+        .nav-box nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .nav-box nav a:hover {
+            background-color: #7c3aed;
+            border-radius: 5px;
+        }
+
+        /* DROPDOWN MENU */
+        .dropdown {
+            display: none !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2e1065;
+            min-width: 180px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .nav-box nav ul li:hover .dropdown {
+            display: block !important;
+        }
+
+        /* MAIN SECTION */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #4c1d95;
+            margin-bottom: 25px;
+        }
+
+        /* CSS GRID */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #c4b5fd;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #6d28d9;
+            margin-top: 0;
+        }
+
+        .audio-card {
+            grid-column: span 2;
+            text-align: center;
+            background-color: #ede9fe;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            .header {
+                justify-content: center;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-card {
+                grid-column: span 1;
+            }
+
+            iframe, video {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLEXBOX NAVIGATION -->
+    <header class="header">
+
+        <div class="nav-box">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">💻 DevStream Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-box">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Programming ▼</a>
+                        <ul class="dropdown">
+                            <li><a href="#">HTML & CSS</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">C Programming</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">Our Courses</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-box">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Start Learning</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- MULTIMEDIA GRID SECTION -->
+    <section class="container">
+
+        <h2>DevStream - Multimedia Learning Center</h2>
+
+        <div class="content-grid">
+
+            <!-- AUDIO -->
+            <div class="card audio-card">
+                <h3>1. Programming Tutorial Audio</h3>
+
+                <audio controls style="width: 80%;">
+                    <source src="audio/awareness.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+            </div>
+
+            <!-- PDF -->
+            <div class="card">
+                <h3>2. Programming Notes (PDF)</h3>
+
+                <iframe
+                    src="downloads/recycling.pdf"
+                    width="100%"
+                    height="280"
+                    title="Programming Notes">
+                    <p>Your browser does not support PDF viewing. <a href="downloads/programming.pdf" target="_blank">Download PDF</a>.</p>
+                </iframe>
+            </div>
+
+            <!-- YOUTUBE -->
+            <div class="card">
+                <h3>3. Web Development Tutorial</h3>
+
+                <iframe
+                    width="100%"
+                    height="280"
+                    src="https://www.youtube.com/embed/0EfsD7xNLIo"
+                    title="Programming Tutorial"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- LOCAL VIDEO -->
+            <div class="card">
+                <h3>4. Coding Demonstration</h3>
+
+                <video width="100%" height="280" controls muted loop>
+                    <source src="video/recycling.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+
+            <!-- GOOGLE MAP -->
+            <div class="card">
+                <h3>5. Programming Learning Center Location</h3>
+
+                <iframe
+                    src="https://maps.google.com/maps?q=Coimbatore&t=&z=12&output=embed"
+                    width="100%"
+                    height="280"
+                    style="border:0;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
